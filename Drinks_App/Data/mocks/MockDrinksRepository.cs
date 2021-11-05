@@ -27,7 +27,7 @@ namespace Drinks_App.Data.mocks
                         ImageUrl = "http://imgh.us/beerL_2.jpg",
                         InStock = true,
                         IsPreferredDrink = true,
-                        ImageThumbnailUrl = "http://imgh.us/beerS_1.jpeg"
+                        ImageThumbnailUrl = "https://cdn.pixabay.com/photo/2017/08/29/23/57/beer-2695358_960_720.jpg"
                     },
                     new Drink {
                         Name = "Rum & Coke",
@@ -38,7 +38,7 @@ namespace Drinks_App.Data.mocks
                         ImageUrl = "http://imgh.us/rumCokeL.jpg",
                         InStock = true,
                         IsPreferredDrink = false,
-                        ImageThumbnailUrl = "http://imgh.us/rumAndCokeS.jpg"
+                        ImageThumbnailUrl = "https://cdn.pixabay.com/photo/2018/05/06/08/49/beer-3378136_960_720.jpg"
                     },
                     new Drink {
                         Name = "Tequila ",
@@ -49,7 +49,7 @@ namespace Drinks_App.Data.mocks
                         ImageUrl = "http://imgh.us/tequilaL.jpg",
                         InStock = true,
                         IsPreferredDrink = false,
-                        ImageThumbnailUrl = "http://imgh.us/tequilaS.jpg"
+                        ImageThumbnailUrl = "https://cdn.pixabay.com/photo/2017/07/02/15/17/happy-hour-2464683_960_720.jpg"
                     },
                     new Drink
                     {
@@ -61,7 +61,7 @@ namespace Drinks_App.Data.mocks
                         ImageUrl = "http://imgh.us/juiceL.jpg",
                         InStock = true,
                         IsPreferredDrink = false,
-                        ImageThumbnailUrl = "http://imgh.us/juiceS.jpg"
+                        ImageThumbnailUrl = "https://cdn.pixabay.com/photo/2014/08/10/18/06/beers-414914_960_720.jpg"
                     }
                 };
             }

@@ -23,8 +23,13 @@ using Drinks_App.Models;
 
 #line default
 #line hidden
+#line 3 "C:\Users\EIS\Documents\GitHub\.Net-Core-Drink\Drinks_App\Views\_ViewImports.cshtml"
+using Drinks_App.ViewModel;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"583387379a597938339285f5a623245873b0a91c", @"/Views/Shared/Error.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"87cf839f7750cafc4c30b84716065c7cbd75fbd9", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e8cd25756f181f81bab7f2185a8d676f2b29b759", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Error : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ErrorViewModel>
     {
         #pragma warning disable 1998
