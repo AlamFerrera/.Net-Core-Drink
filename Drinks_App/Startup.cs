@@ -1,35 +1,47 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Configuration;
+using Drinks_App.Data;
+using Microsoft.EntityFrameworkCore;
+using Drinks_App.Data.Repositories;
 using Drinks_App.Data.interfaces;
-using Drinks_App.Data.mocks;
-
+using Drinks_App.Data.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using System.Data.SqlClient;
+using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace Drinks_App
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        private IConfigurationRoot _configurationRoot;
+
+        public Startup(IHostingEnvironment hostingEnvironment)
+        {
+            _configurationRoot = new ConfigurationBuilder().SetBasePath(hostingEnvironment.ContentRootPath)
+                .AddJsonFile("appsettings.json")
+                .Build();
+        }
+
+       /* public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-        }
+        }*/
 
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
-            services.AddTransient<IDrinkRepository, MockDrinksRepository>();
-            services.AddTransient<ICategoryRepository, MockCategoryRepository>();
+            //Server Configuration
+            services.AddDbContext<AppDbContext>(options => 
+                    options.UseSqlServer(_configurationRoot.GetConnectionString("DefaultConnection")));
+            services.AddTransient<IDrinkRepository, DrinkRepository>();
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
 
             services.Configure<CookiePolicyOptions>(options =>
             {
@@ -43,7 +55,7 @@ namespace Drinks_App
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider serviceProvider)
         {
             if (env.IsDevelopment())
             {
@@ -58,13 +70,14 @@ namespace Drinks_App
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
+          
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+            DbInitializer.Seed(serviceProvider);
         }
     }
 }
