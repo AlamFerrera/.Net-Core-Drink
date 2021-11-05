@@ -12,8 +12,7 @@ namespace Drinks_App.Data
     {
         public static void Seed(IServiceProvider applicationBuilder)
         {
-            AppDbContext context =
-               applicationBuilder.GetRequiredService<AppDbContext>();
+            AppDbContext context = applicationBuilder.GetRequiredService<AppDbContext>();
 
             if (!context.Categories.Any())
             {
@@ -34,7 +33,7 @@ namespace Drinks_App.Data
                         ImageUrl = "http://imgh.us/beerL_2.jpg",
                         InStock = true,
                         IsPreferredDrink = true,
-                        ImageThumbnailUrl = "https://cdn.pixabay.com/photo/2016/09/14/11/35/beer-1669273_960_720.png"
+                        ImageThumbnailUrl = "https://cdn.pixabay.com/photo/2017/08/29/23/57/beer-2695358_960_720.jpg"
                     },
                     new Drink
                     {
