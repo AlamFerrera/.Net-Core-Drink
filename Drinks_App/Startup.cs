@@ -80,6 +80,14 @@ namespace Drinks_App
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
+                    name: "categoryFilter",
+                    template: "Drink/{action}/{category?}", 
+                    defaults: new {
+                        Controller="Drink",
+                        action="List"
+                    });
+
+                routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
