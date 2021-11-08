@@ -31,3 +31,4 @@ C:\Users\EIS\Documents\GitHub\.Net-Core-Drink\Drinks_App\obj\Debug\netcoreapp2.1
 C:\Users\EIS\Documents\GitHub\.Net-Core-Drink\Drinks_App\obj\Debug\netcoreapp2.1\Drinks_App.pdb
 C:\Users\EIS\Documents\GitHub\.Net-Core-Drink\Drinks_App\obj\Debug\netcoreapp2.1\Drinks_App.csproj.CopyComplete
 C:\Users\EIS\Documents\GitHub\.Net-Core-Drink\Drinks_App\obj\Debug\netcoreapp2.1\Razor\Views\Drink\List.g.cshtml.cs
+C:\Users\EIS\Documents\GitHub\.Net-Core-Drink\Drinks_App\obj\Debug\netcoreapp2.1\Razor\Views\Shared\DrinksSummary.g.cshtml.cs
