@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Drinks_App.Data.interfaces;
 using Drinks_App.Data.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -20,12 +21,15 @@ namespace Drinks_App.Controllers
             _orderRepository = orderRepository;
             _shoppingCart = shoppingCart;
         }
+
+        [Authorize]
         public IActionResult Checkout()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize]
         public IActionResult Checkout(Order order)
         {
             var items = _shoppingCart.GetShoppingCartItems();

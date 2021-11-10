@@ -14,6 +14,7 @@ using System.Data.SqlClient;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using Microsoft.AspNetCore.Identity;
+using System.Data.SqlClient;
 
 namespace Drinks_App
 {
@@ -33,7 +34,7 @@ namespace Drinks_App
             Configuration = configuration;
         }*/
 
-        public IConfiguration Configuration { get; }
+       /* public IConfiguration Configuration { get; }*/
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -55,15 +56,12 @@ namespace Drinks_App
             });
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-           
+            services.AddSession();
             services.AddScoped(sp => ShoppingCart.GetCart(sp));
             services.AddTransient<IOrderRepository, OrderRepository>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddMemoryCache();
-            services.AddSession(options => {
-                options.IdleTimeout = TimeSpan.FromMinutes(20); // Tiempo de expiración   
-            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

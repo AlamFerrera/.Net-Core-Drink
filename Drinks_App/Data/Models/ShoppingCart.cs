@@ -21,12 +21,10 @@ namespace Drinks_App.Data.Models
 
         public static ShoppingCart GetCart(IServiceProvider services)
         {
-            ISession session = services.GetRequiredService<IHttpContextAccessor>()?
-                .HttpContext.Session;
+            ISession session = services.GetRequiredService<IHttpContextAccessor>().HttpContext.Session; //?.HttpContext.Session;
 
             var context = services.GetService<AppDbContext>();
             string cartId = session.GetString("CartId") ?? Guid.NewGuid().ToString();
-
             session.SetString("CartId", cartId);
 
             return new ShoppingCart(context) {
@@ -36,8 +34,9 @@ namespace Drinks_App.Data.Models
 
         public void AddtoCart(Drink drink, int amount)
         {
-            var shoppingCartItem = _appDbContext.ShoppingCartItems.SingleOrDefault(s => s.Drink.DrinkId == drink.DrinkId && 
-                                                                                   s.ShoppingCartId == ShoppingCartId);
+            var shoppingCartItem = _appDbContext.ShoppingCartItems
+                                .SingleOrDefault(s => s.Drink.DrinkId == drink.DrinkId && 
+                                                  s.ShoppingCartId == ShoppingCartId);
           
             if (shoppingCartItem == null)
             {

@@ -1,8 +1,7 @@
-﻿
-using Drinks_App.Data.Models;
+﻿using Drinks_App.Data.Models;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
 using System;
+using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -13,7 +12,6 @@ namespace Drinks_App.Data
         public static void Seed(IServiceProvider applicationBuilder)
         {
             AppDbContext context = applicationBuilder.GetRequiredService<AppDbContext>();
-
             if (!context.Categories.Any())
             {
                 context.Categories.AddRange(Categories.Select(c => c.Value));

@@ -60,7 +60,7 @@ using Drinks_App.ViewModel;
             WriteLiteral("<h1>Contact us</h1>\r\n<p>If you have any questions please do not hesitate to contact us</p>\r\n\r\n");
             EndContext();
             BeginContext(94, 63, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("email", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b1b55ff00cb341f0903d59a3a8858855", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("email", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "239cd4780fbb47a697b5f9bb8f71d7f0", async() => {
             }
             );
             __Drinks_App_TagHelpers_EmailTagHelper = CreateTagHelper<global::Drinks_App.TagHelpers.EmailTagHelper>();

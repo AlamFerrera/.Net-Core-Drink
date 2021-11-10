@@ -64,7 +64,7 @@ using Drinks_App.ViewModel;
             WriteLiteral("<li class=\"dropdown\">\r\n    ");
             EndContext();
             BeginContext(27, 149, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0efd727ab0fb47789adf71df5851171d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a874ed608fe4e288334dfe7ac277b81", async() => {
                 BeginContext(119, 53, true);
                 WriteLiteral("\r\n        Drinks\r\n        <b class=\"caret\"></b>\r\n    ");
                 EndContext();
@@ -99,7 +99,7 @@ using Drinks_App.ViewModel;
             WriteLiteral("            <li>\r\n                ");
             EndContext();
             BeginContext(297, 154, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "267751af1e5f4939b8ca9c14a3a13529", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "100e392919364c00bea66acef504c67d", async() => {
                 BeginContext(385, 22, true);
                 WriteLiteral("\r\n                    ");
                 EndContext();
@@ -154,7 +154,7 @@ using Drinks_App.ViewModel;
             WriteLiteral("        <li class=\"divider\"></li>\r\n        <li>\r\n            ");
             EndContext();
             BeginContext(544, 85, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4b0c794dc3484a77aa597c13333d28d0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cbeaaee29d5d45eaaecc36d6125c27ff", async() => {
                 BeginContext(610, 15, true);
                 WriteLiteral("View all drinks");
                 EndContext();

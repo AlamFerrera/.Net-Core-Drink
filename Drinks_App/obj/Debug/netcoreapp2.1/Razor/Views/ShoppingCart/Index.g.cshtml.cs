@@ -132,7 +132,7 @@ using Drinks_App.ViewModel;
             WriteLiteral("\r\n                </td>\r\n                <td class=\"text-center\">\r\n                    ");
             EndContext();
             BeginContext(1002, 191, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "421aeff569874cbdbddc211318f4d2b8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c9a18f491ba4465bad2480872b78e39d", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper>();
@@ -185,7 +185,7 @@ using Drinks_App.ViewModel;
             WriteLiteral("</td>\r\n            </tr>\r\n        </tfoot>\r\n    </table>\r\n\r\n    <div class=\"text-right\">\r\n        <div class=\"btn-group\">\r\n            ");
             EndContext();
             BeginContext(1581, 85, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1172ebe23c1e43d68b92ff393d97fdef", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6451345ba7d64eea87e333a6ced001da", async() => {
                 BeginContext(1653, 9, true);
                 WriteLiteral("Check out");
                 EndContext();
@@ -218,7 +218,7 @@ using Drinks_App.ViewModel;
                         ");
             EndContext();
             BeginContext(1982, 88, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b535cafb7c86462ab5fed5eb734aec62", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "11aacac05b7a4fbdb25e12d0660d7d24", async() => {
                 BeginContext(2057, 9, true);
                 WriteLiteral("Alcoholic");
                 EndContext();
@@ -248,7 +248,7 @@ using Drinks_App.ViewModel;
             WriteLiteral("\r\n                    </li>\r\n                    <li>\r\n                        ");
             EndContext();
             BeginContext(2149, 96, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f82394fa0e5c4a44b9906f34a9a79384", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "463ec7ab8912428db8d92ad20f4abde3", async() => {
                 BeginContext(2228, 13, true);
                 WriteLiteral("Non Alcoholic");
                 EndContext();

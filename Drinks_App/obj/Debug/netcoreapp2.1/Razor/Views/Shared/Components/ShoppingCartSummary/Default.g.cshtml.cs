@@ -68,7 +68,7 @@ using Drinks_App.ViewModel;
             WriteLiteral("    <li>\r\n        ");
             EndContext();
             BeginContext(108, 235, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7e5dfa5f5cf1441ca16270a16a604c6d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f81b368ba2a74397980e58504bb3a88f", async() => {
                 BeginContext(141, 124, true);
                 WriteLiteral("\r\n            <span class=\"glyphicon glyphicon-shopping-cart\"></span>\r\n            <span id=\"cart-status\">\r\n                ");
                 EndContext();

@@ -7,6 +7,7 @@ using Drinks_App.Data.Models;
 using Drinks_App.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -35,6 +36,7 @@ namespace Drinks_App.Controllers
              return View(shoppingCartViewModel);
         }
 
+        [Authorize]
         public RedirectToActionResult AddToShoppingCart(int drinkId)
         {
             var selectedDrink = _drinkRepository.Drinks.FirstOrDefault(p => p.DrinkId == drinkId);

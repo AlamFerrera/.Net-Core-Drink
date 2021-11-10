@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Drinks_App.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,6 +21,7 @@ namespace Drinks_App.Controllers
             _userManager = userManager;
             _signInManager = signInManager;
         }
+
         public IActionResult Login(string returnUrl)
         {
             return View(new LoginViewModel()
@@ -86,6 +88,7 @@ namespace Drinks_App.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
