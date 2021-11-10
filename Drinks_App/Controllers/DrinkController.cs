@@ -23,10 +23,6 @@ namespace Drinks_App.Controllers
 
         public ViewResult List(string category)
         {
-            /* DrinkListViewModel vm = new DrinkListViewModel();
-             vm.Drinks = _drinkRepository.Drinks;
-             vm.CurrentCategory = "Drink Category";
-             return View(vm);*/
             string _category = category;
             IEnumerable<Drink> drinks;
             string currentCategory = string.Empty;

@@ -21,23 +21,25 @@ namespace Drinks_App.Data.Models
 
         public static ShoppingCart GetCart(IServiceProvider services)
         {
-            ISession session = services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session;
+            ISession session = services.GetRequiredService<IHttpContextAccessor>()?
+                .HttpContext.Session;
+
             var context = services.GetService<AppDbContext>();
             string cartId = session.GetString("CartId") ?? Guid.NewGuid().ToString();
 
             session.SetString("CartId", cartId);
-            return new ShoppingCart(context)
-            {
+
+            return new ShoppingCart(context) {
                 ShoppingCartId = cartId
             };
-        }
+        }//"99def607-e900-495b-958d-4a34f08d9d1d"
 
         public void AddtoCart(Drink drink, int amount)
         {
             var shoppingCartItem = _appDbContext.ShoppingCartItems.SingleOrDefault(s => s.Drink.DrinkId == drink.DrinkId && 
                                                                                    s.ShoppingCartId == ShoppingCartId);
-
-            if(shoppingCartItem == null)
+          
+            if (shoppingCartItem == null)
             {
                 shoppingCartItem = new ShoppingCartItem
                 {
@@ -78,9 +80,12 @@ namespace Drinks_App.Data.Models
 
         public List<ShoppingCartItem> GetShoppingCartItems()
         {
-            return ShoppingCartItems ?? (ShoppingCartItems = _appDbContext.ShoppingCartItems.Where(c => c.ShoppingCartId == ShoppingCartId)
-                                        .Include(s => s.Drink)
-                                        .ToList());
+
+            return ShoppingCartItems ??
+                    (ShoppingCartItems =
+                        _appDbContext.ShoppingCartItems.Where(c => c.ShoppingCartId == ShoppingCartId)
+                            .Include(s => s.Drink)
+                            .ToList());
         }
 
         public void ClearCart()

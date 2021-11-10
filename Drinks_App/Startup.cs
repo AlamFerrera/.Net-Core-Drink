@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using System.Data.SqlClient;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using Microsoft.AspNetCore.Identity;
 
 namespace Drinks_App
 {
@@ -40,8 +41,11 @@ namespace Drinks_App
             //Server Configuration
             services.AddDbContext<AppDbContext>(options => 
                     options.UseSqlServer(_configurationRoot.GetConnectionString("DefaultConnection")));
-            services.AddTransient<IDrinkRepository, DrinkRepository>();
+
+            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
+
             services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<IDrinkRepository, DrinkRepository>();
 
             services.Configure<CookiePolicyOptions>(options =>
             {
@@ -51,12 +55,15 @@ namespace Drinks_App
             });
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+           
             services.AddScoped(sp => ShoppingCart.GetCart(sp));
-
+            services.AddTransient<IOrderRepository, OrderRepository>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddMemoryCache();
-            services.AddSession();
+            services.AddSession(options => {
+                options.IdleTimeout = TimeSpan.FromMinutes(20); // Tiempo de expiración   
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -76,7 +83,8 @@ namespace Drinks_App
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseSession();
-          
+            app.UseIdentity();
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

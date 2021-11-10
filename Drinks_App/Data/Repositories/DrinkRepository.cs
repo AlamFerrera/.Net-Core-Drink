@@ -18,7 +18,9 @@ namespace Drinks_App.Data.Repositories
         }
 
         public IEnumerable<Drink> Drinks => _appDbContext.Drinks.Include(c => c.Category);
-        public IEnumerable<Drink> PreferredDrinks => _appDbContext.Drinks.Where(p => p.IsPreferredDrink).Include(c => c.Category);
+        public IEnumerable<Drink> PreferredDrinks => _appDbContext.Drinks
+                                    .Where(p => p.IsPreferredDrink)
+                                    .Include(c => c.Category);
         public Drink GetDrinkById(int drinkID) => _appDbContext.Drinks.FirstOrDefault(p => p.DrinkId == drinkID);
     }
 }

@@ -6,6 +6,7 @@ using Drinks_App.Data.interfaces;
 using Drinks_App.Data.Models;
 using Drinks_App.ViewModel;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -24,13 +25,14 @@ namespace Drinks_App.Controllers
         public ViewResult Index()
         {
             var items = _shoppingCart.GetShoppingCartItems();
-            _shoppingCart.ShoppingCartItems = items;
-            var sCVM = new ShoppingCartViewModel
-            {
-                ShoppingCart = _shoppingCart,
-                ShoppingCartTotal = _shoppingCart.GetShoppingCartTotal()
-            };
-            return View(sCVM);
+             _shoppingCart.ShoppingCartItems = items;
+
+             var shoppingCartViewModel = new ShoppingCartViewModel
+             {
+                 ShoppingCart = _shoppingCart,
+                 ShoppingCartTotal = _shoppingCart.GetShoppingCartTotal()
+             };
+             return View(shoppingCartViewModel);
         }
 
         public RedirectToActionResult AddToShoppingCart(int drinkId)

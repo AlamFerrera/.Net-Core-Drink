@@ -1,51 +1,51 @@
-﻿#cartButton{
+﻿#cartButton {
     margin-right: 8px;
 }
 
-nav{
+nav {
     padding: 8px;
 }
 
-.loginForm{
+.loginForm {
     margin: 10%;
 }
 
-.checkoutForm{
-    margin-top:10%;
+.checkoutForm {
+    margin-top: 5%;
 }
 
-.orderForm{
+.orderForm {
     margin-top: 5%;
     border-radius: 20px;
     border-style: solid;
-    border-color: #2FA4E7;
+    border-color: #2fa4e7;
 }
 
-a.remove{
+a.remove {
     text-decoration: none;
 }
 
-a.remove:hover{
-    color:blue;
-}
+    a.remove:hover {
+        color: blue;
+    }
 
-.center_div{
+.center_div {
     margin: 0 auto;
-    width: 80%;
+    width: 80% /* value of your choice which suits your alignment */
 }
 
-.marginTop{
-    margin-top:5%;
+.marginTop {
+    margin-top: 5%;
 }
 
-.marginTop1{
+.marginTop1 {
     margin-top: 2%;
 }
 
-.formPullRightButton{
-    margin-right: 10px !important;
+.formPullRightButton {
+    margin-right: 10px !important
 }
 
-.carousel img{
+.carousel img {
     min-width: 100%;
 }
