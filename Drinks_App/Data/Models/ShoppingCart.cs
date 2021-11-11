@@ -21,7 +21,8 @@ namespace Drinks_App.Data.Models
 
         public static ShoppingCart GetCart(IServiceProvider services)
         {
-            ISession session = services.GetRequiredService<IHttpContextAccessor>().HttpContext.Session; //?.HttpContext.Session;
+            ISession session = services.GetServices<IHttpContextAccessor>().First().HttpContext.Session;
+                //services.GetRequiredService<IHttpContextAccessor>().HttpContext.Session; //?.HttpContext.Session;
 
             var context = services.GetService<AppDbContext>();
             string cartId = session.GetString("CartId") ?? Guid.NewGuid().ToString();
